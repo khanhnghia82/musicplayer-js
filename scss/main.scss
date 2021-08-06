@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2? family = Ubuntu: wght @ 300; 400; 500; 700 & display = swap');
+@import '../abstracts/_variables.scss';
+@import '../abstracts/mixin';
+@import '../components/switchMode';
+@import '../components/button';
+@import '../base/typography';
+@import '../layouts/player';
+@import '../layouts/playlist';
+@import '../layouts/song';
+
+.container {
+    width: 100%;
+    background-color: map-get($lightColor, bgColor);  
+    padding: 2rem;
+    @include media-medium {
+        padding-top: 4rem; 
+        padding-bottom: 5rem;
+        height: 100vh;
+    }
+}
+
+.app{    
+    max-width: 75rem;
+    margin: 0 auto;
+    background: -webkit-radial-gradient(top left, map-get($lightColor, appColor), map-get($lightColor, bgColor));
+    box-shadow: 0px 2px 15px 6px map-get($lightColor, shadowColor);
+    color: map-get($lightColor,fontColor);
+    border-radius: 1.4rem;
+    padding: 2rem 0;        
+    max-height: 135vh;    
+    &-wrap {                
+        padding: 1rem 0;        
+        @include flexbox(center, center, column, wrap);            
+        @include media-medium {
+            @include flexbox(flex-start, flex-start);
+            max-height: 60rem;            
+        }                  
+    } 
+}
+
+.darkMode {
+    background: -webkit-radial-gradient(top left, map-get($darkColor, appColor), map-get($darkColor, bgColor));
+    box-shadow: 0px 2px 15px 6px map-get($darkColor, shadowColor);
+    // box-shadow: 0px 3px 3px #1d1d1d;
+    color: map-get($darkColor,fontColor);        
+    .mode {
+        &-name {
+            color: map-get($darkColor, fontColor);
+        }
+    }
+    .container {
+        background-color: map-get($darkColor, bgColor);
+    }
+     
+    .player {
+        &-control {
+            color: map-get($darkColor, appColor);
+        }
+    }
+    .song {
+        box-shadow: 1px 2px 2px map-get($darkColor, shadowColor);
+    }
+}
+

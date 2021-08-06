@@ -1,0 +1,19 @@
+.btn {
+    width: 50px;
+    background-color: rgba(map-get($lightColor, bgColor),0.4);
+    padding: 8px;
+    border-radius: 5px;
+    @include flexbox(center, center);
+    transition: 0.3s;
+    margin: 0 2px;
+
+    &:hover {
+        cursor: pointer;
+        color: $orangeColor;
+        font-weight: 700;
+        background-color: map-get($lightColor, shawdowColor);
+    }
+    &--active {
+        color: $orangeColor;
+    }
+}

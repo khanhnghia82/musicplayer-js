@@ -1,0 +1,56 @@
+.mode {
+    margin: 0 auto 10px;
+    text-align: center;    
+    width: 15rem;
+    @include flexbox(center,space-between);
+    &-name {
+        color: map-get($lightColor, fontColor);
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    &-switch {        
+        position: relative;
+        display: inline-block;
+        width: 5rem;
+        height: 2.4rem;
+        cursor: pointer;
+        &__check {
+            opacity: 0;
+            width: 0;
+            height: 0;
+
+            &:checked + .mode-switch__slider {
+                background: linear-gradient(to right, #3779b9, #36ba78);
+            }
+            &:checked + .mode-switch__slider::before {
+                background: #000;
+                transform: translateX(23px);
+            }
+        }
+        &__slider {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, map-get($lightColor, bgColor), map-get($lightColor, fontColor));
+            border-radius: 2.5rem;
+            transition: 0.4s;                     
+
+            &::before {
+                position: absolute;
+                content: "";
+                width: 1.8rem;
+                height: 1.8rem;
+                top: 3px;
+                left: 4px;
+                background: #e9f9fd;
+                border-radius: 50%;
+                transition: 0.4s;                
+            }
+        }
+    }
+}
+

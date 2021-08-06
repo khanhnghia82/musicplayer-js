@@ -1,0 +1,33 @@
+@mixin flexbox($align: flex-start, $justify: flex-start, $direction: row, $wrap: nowrap) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+
+@keyframes Rotate {
+    from {
+        transform: rotate(0deg);
+    }to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes Bar {
+    0% {height: 5px}
+    50% {height: 18px}
+    100% {height: 5px}
+}
+
+@mixin media-medium {
+    @media only screen and (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin media-phone {
+    @media only screen and (max-width: 767px){
+        @content;
+    }
+}

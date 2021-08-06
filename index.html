@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="icon" href="./images/icon.png" type="image/png" sizes="32x32" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./scss/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="app">
+        <div class="mode">
+          <span class="mode-name">Light Mode:</span>
+          <label class="mode-switch">
+            <input type="checkbox" class="mode-switch__check" />
+            <span class="mode-switch__slider"></span>
+          </label>
+        </div>
+        <div class="app-wrap">
+          <section class="player">
+            <h3 class="player-heading">playing now</h3>
+
+            <div class="player-wrapInfo">
+                <div class="player-borderImg">
+                  <img src="./images/cheer_up.jpg" alt="" class="player-image" />
+                </div>
+                <div class="player-wrapSinger">
+                    <h3 class="player-songName">Cheer Up</h3>
+                    <span class="player-singerName">Hong Jing Young</span>
+                  </div>
+                </div>
+                
+            <div class="player-wrapControl">
+              <canvas class="player-wave"></canvas>
+              <div class="player-volume">
+                <div class="player-volume__control">
+                    <span class="player-volume__down">➖</span>
+                    <input
+                      type="range" min="0" max="100" value="100"
+                      class="player-volume__progress"
+                    />
+                    <span class="player-volume__up">➕</span>
+                </div>
+                <span class="player-volume__viewPercent">100%</span>
+              </div>
+
+              <div class="player-progress">
+                <div class="player-progress__time">
+                  <label for="" class="player-progress__time-seek">123</label>
+                  <label for="" class="player-progress__time-duration">456</label>
+                </div>
+                <input
+                  type="range" id="player-progress__slider"
+                  class="player-progress__slider"
+                  value="0" step="1" min="0" max="100"
+                />
+              </div>
+
+              <audio id="audio" src=""></audio>
+
+              <div class="player-control">
+                <div class="player-control__repeat btn">
+                  <i class="fas fa-redo"></i>
+                </div>
+                <div class="player-control__backward btn">
+                  <i class="fas fa-step-backward"></i>
+                </div>
+                <div class="player-control__togglePlay btn">
+                  <i class="fas fa-pause icon-pause"></i>
+                  <i class="fas fa-play icon-play"></i>
+                </div>
+                <div class="player-control__forward btn">
+                  <i class="fas fa-step-forward"></i>
+                </div>
+                <div class="player-control__random btn">
+                  <i class="fas fa-random"></i>
+                </div>
+              </div>
+            </div>
+
+
+
+          </section>
+
+          <section class="playlist">
+            <div class="song">
+              <img src="./images/cheer_up.jpg" alt="" class="song__thumb" />
+              <div class="song__info">
+                <h3 class="song__info-name">The song</h3>
+                <p class="song__info-singer">Singer</p>
+              </div>
+              <div class="song__effect">
+                <div class="song__effect-bar"></div>                
+                <!-- <div class="song__effect-bar"></div>                
+                <div class="song__effect-bar"></div>                
+                <div class="song__effect-bar"></div>                
+                <div class="song__effect-bar"></div>                                 -->
+              </div>
+            </div>
+          </section>
+        </div>
+        <footer>
+          <p
+            style="
+              text-align: center;
+              margin-top: 15px;
+              font-size: 12px;
+              font-weight: 600;
+              letter-spacing: 1.5px;
+            "
+          >
+            ©Khanh Nghia - Practice for HTML, SCSS, JS - From F8-FullStack
+          </p>
+        </footer>
+      </div>
+    </div>
+
+    <script src="./javascripts/app.js"></script>
+  </body>
+</html>
